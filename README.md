@@ -2,7 +2,7 @@
 ![screencapture-file-C-Users-DELL-Desktop-New-folder-4-index-html-2023-10-06-09_07_35](https://github.com/maryamparvaz/Dandy-gallery/assets/124708513/04216be5-1ecd-4eef-b8e2-66a17c7f3760)
 
 
-- [Demo Project]( https://maryamparvaz.github.io/men-shop/)
+- [Demo Project](https://maryamparvaz.github.io/Dandy-gallery/)
 
 - Developed by Maryam Parvaz 🙎
 
