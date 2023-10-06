@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+                *,
+                ::after {
+                        padding: 0;
+                        margin: 0;
+                        box-sizing: border-box;
+                }
+
+                body {
+                        font-family: "Montserrat", sans-serif;
+
+                }
+
+                li {
+                        list-style-type: none;
+                }
+
+                a {
+                        text-decoration: none;
+                }
+
+                main {
+                        width: 100%;
+                        /* height: 100vh; */
+                        background-color: #FFD4DB;
+                        font-family: "Montserrat", sans-serif;
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: center;
+                }
+
+                .menu {
+                        width: 80%;
+                        height: 80px;
+                        /* background-color: antiquewhite; */
+                        margin-top: 10px;
+                        display: flex;
+                        justify-content: space-between;
+                        position: relative;
+
+                }
+
+                .menu>ul {
+                        height: 100%;
+                        /* border: 1px solid red; */
+                        min-width: 50px;
+                        display: flex;
+                        align-items: center;
+                }
+
+                .menu>ul>li {
+                        /* border: 1px solid yellow; */
+                        height: 100%;
+                        display: flex;
+                        flex-wrap: wrap;
+                        align-items: center;
+                        /* background-color: black; */
+                }
+
+                .menu>ul>li>a {
+                        display: flex;
+                        height: 100%;
+                        width: 100%;
+                        align-items: center;
+                        /* background-color: brown; */
+                        padding: 20px;
+                        font-size: 20px;
+                        color: black;
+                }
+
+                .menu>ul>li>a:hover {
+                        border-bottom: 1px solid #15B5B0;
+                        color: #15B5B0;
+                        font-size: 30px;
+                }
+
+                .menu>ul>li>img {
+                        width: 150px;
+                        height: 100%;
+                }
+
+                .menu>ul>li:hover .line3 {
+                        opacity: 1;
+                        visibility: visible;
+                }
+
+                .line3 {
+                        /* border: 1px solid red; */
+                        width: 100%;
+                        opacity: 0;
+                        visibility: hidden;
+                        transition: .4s;
+                }
+
+                .line3>li {
+                        width: 100%;
+                        height: 60px;
+                        background-color: #15B5B0;
+                        display: flex;
+                        align-items: center;
+
+                }
+
+                .line3>li>a {
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        padding: 15px;
+                        /* border: 1px solid red; */
+                        font-size: 20px;
+                        color: black;
+                }
+
+                .line3>li>a:hover {
+                        background-color: #444444;
+                        color: white;
+                }
+
+                .menu>ul>li:hover .megamenu {
+                        opacity: 1;
+                        visibility: visible;
+                }
+
+                .megamenu {
+                        width: 100%;
+                        background-color: #15B5B0;
+                        position: absolute;
+                        left: 0;
+                        top: 90px;
+                        display: flex;
+                        flex-wrap: wrap;
+                        opacity: 0;
+                        visibility: hidden;
+                        transition: .4s;
+                }
+
+                .megamenu>li {
+                        width: 100%;
+                        display: flex;
+                        flex-wrap: wrap;
+                }
+
+                .megamenu>li>ul {
+                        width: 33%;
+                        border-right: 1px solid gray;
+
+                }
+
+                .megamenu>li>ul>li {
+                        width: 100%;
+                        display: flex;
+                        font-size: 30px;
+                        justify-content: center;
+                        color: #444444;
+                        /* background-color: yellow; */
+                }
+
+                .megamenu>li>ul>li>a {
+                        width: 100%;
+                        height: 100%;
+                        font-size: 20px;
+                        color: black;
+                        display: flex;
+                        justify-content: center;
+                        /* background-color: rebeccapurple; */
+                        padding: 15px 0;
+                        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+
+                }
+
+                .megamenu>li>ul>li>a:hover {
+                        background-color: #444444;
+                        color: azure;
+                }
+
+                .megamenu>li>ul>li>img {
+                        width: 50%;
+                        margin-top: 10px;
+                }
+
+                main>.page1 {
+                        display: flex;
+                        justify-content: space-between;
+                        height: 100vh;
+                        width: 100%;
+                        /* background-color: #444444; */
+                }
+
+                .page1.right {
+                        height: 100%;
+                        width: 50%;
+                        display: flex;
+
+                }
+
+                .right>figure {
+                        width: 90%;
+                        height: 100%;
+                        display: flex;
+                        justify-content: end;
+                        margin-top: 20px;
+                }
+
+                .right>figure>img {
+                        height: 100%;
+                        width: 90%;
+                }
+
+                section>.left {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                        /* border: 1px solid black; */
+                        width: 40%;
+                        height: 100%;
+
+                }
+
+                section>.left:first-child {
+                        font-size: 70px;
+                        font-family: Cursive;
+                }
+
+                section>.left>div:last-child {
+                        display: flex;
+                        width: 200px;
+                        height: 50px;
+                        margin: 30px;
+                        /* border: 1px solid red; */
+                }
+
+                section>.left>div:last-child>input {
+                        width: 100%;
+                        height: 100%;
+                        background-color: #F9BDC0;
+                        border: none;
+                        font-size: 20px;
+                }
+
+                section>.left>div:last-child>input:hover {
+                        background-color: #15B5B0;
+                        color: black;
+                        font-size: 25px;
+                }
+
+                h2 {
+                        margin-top: 80px;
+
+                }
+
+                .page2 {
+                        margin-top: 90px;
+                        display: flex;
+                        width: 100%;
+                        height: 100vh;
+                        /* align-items: center; */
+                        justify-content: center;
+                        /* background-color: #444444; */
+                        /* background-color: #FFD4DB; */
+
+                }
+
+
+
+                .page2>div {
+                        height: 120%;
+                        width: 60%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background-color: #15B5B0;
+                        position: relative;
+                        background-color: #15B5B0;
+
+                }
+
+                .page2>div>div {
+                        width: 100%;
+                        position: absolute;
+                        bottom: -40px;
+                        left: -50px;
+                }
+
+
+                .page2>div>div>img {
+                        width: 33%;
+                }
+
+                h3,
+                h2 {
+                        width: 100%;
+                        height: 70px;
+                        background-color: #15b5b065;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 40px;
+                        font-family: Cursive;
+                }
+
+                h3 {
+                        margin-top: 250px;
+                }
+
+                .page3 {
+                        height: 500px;
+                        width: 100%;
+                        display: flex;
+                        /* position: relative; */
+                }
+
+                .page3>figure {
+                        width: 100%;
+                        height: 80%;
+                        margin: auto 40px;
+                        margin-top: 40px;
+                        display: flex;
+                        justify-content: center;
+                        position: relative;
+                        /* background-color: yellowgreen; */
+                        overflow: hidden;
+                }
+
+                .page3>div>img {
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        position: absolute;
+                }
+
+                .page3>figure::after {
+                        content: '';
+                        width: 0;
+                        height: 100%;
+                        position: absolute;
+                        bottom: 0;
+                        left: 50%;
+                        background-color: rgba(0, 0, 0, 0.568);
+                        transition: 1s;
+                }
+
+                .page3>figure:hover::after {
+                        left: 0;
+                        width: 100%;
+                }
+
+                .page3>figure>div {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        position: absolute;
+                        bottom: -100px;
+                        left: 40%;
+                        width: 150px;
+                        height: 80px;
+                        background-color: #15b5b0;
+                        transition: 1s;
+                        z-index: 1;
+                }
+
+                .page3>figure:hover div {
+                        bottom: 40%;
+                }
+
+                .page3>figure>div>a {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        position: relative;
+                        width: 100%;
+                        height: 100%;
+                        font-size: 20px;
+                        color: black;
+                }
+
+                .foot {
+                        width: 100%;
+                        background-color: #15b5b084;
+                        height: 200px;
+                        display: flex;
+                        justify-content: space-evenly;
+                        /* position: relative; */
+                        margin-top: 110px;
+                }
+
+                .foot>div {
+                        width: 40%;
+                        height: 100%;
+                        /* background-color: #ffd4dbc3; */
+                        /* position: absolute; */
+                        bottom: 0px;
+                        left: 0;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                }
+
+                .foot>div>figure {
+                        margin: 10px;
+                        display: flex;
+                        /* flex-direction: column; */
+                }
+
+
+                .foot>div>figure>figcaption {
+                        margin: 10px;
+                        font-size: 20px;
+                }
+
+                .foot>div>figure:hover a {
+                        color: #F9BDC0;
+                }
+
+                .foot>div>figure>figcaption>a {
+                        color: black;
+                }
+
+                .foot>div>h4 {
+                        font-size: 25px;
+                }
+
+                .foot>div>p {
+                        font-size: 17px;
+                        margin-top: 15px;
+                }
+
+                .page4 {
+                        width: 100%;
+                        height: 100vh;
+                        background-color: #15B5B0;
+                        margin: 20px 0;
+                        display: flex;
+                        justify-content: space-around;
+                        align-items: center;
+                }
+
+                .page4>figure {
+                        width: 40%;
+                        height: 500px;
+                        background-color: #F9BDC0;
+                        position: relative;
+                }
+
+                .page4>figure>img {
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 30px;
+                        left: 40px;
+                        transition: .4s;
+
+                }
+
+                .page4>figure:hover img {
+                        width: 110%;
+                        height: 110%;
+                }
+
+                .page4>div {
+                        width: 40%;
+                        /* height: 100%; */
+                }
+
+                .page4>div>h2 {
+                        font-size: 40px;
+                        transition: .4s;
+                }
+
+                .page4>div>h2:hover {
+                        font-size: 50px;
+                        color: #F9BDC0;
+                }
+
+                .page4>div>p {
+                        font-size: 19px;
+                        margin-top: 20px;
+                }
+
+                .page5 {
+                        height: 100vh;
+                        width: 100%;
+                        background-color: #15B5B0;
+                        display: flex;
+                        justify-content: space-between;
+                        margin-top: 100px;
+                }
+
+                .page5>h3 {
+                        font-size: 60px;
+                        width: 40%;
+                        display: flex;
+                        justify-self: start;
+                        align-items: start;
+                }
+
+                .page5>div {
+                        width: 50%;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: column;
+                        /* align-items: center; */
+                        flex-wrap: wrap;
+                        margin-top: 110px;
+
+                }
+
+                .page5>div>input {
+                        width: 50%;
+                        height: 40px;
+                        margin: 5px;
+                        background-color: #ffd4dbe2;
+                        font-size: 17px;
+                }
+
+                .page5>div>textarea {
+                        width: 50%;
+                        height: 220px;
+                        margin: 5px;
+                        background-color: #ffd4dbe2;
+                        font-size: 17px;
+
+                }
+        </style>
+</head>
+
+<body>
+        <main>
+                <nav class="menu">
+                        <ul>
+                                <li><a href="">Woman</a>
+                                        <ul class="megamenu">
+                                                <li>
+                                                        <ul>
+                                                                <li>Bag</li>
+                                                                <li><a href="">Small bag</a></li>
+                                                                <li><a href="">Neck bag</a></li>
+                                                                <li><a href="">back pack</a></li>
+                                                                <li><img src="assets/photo/33.png" alt=""></li>
+                                                        </ul>
+                                                        <ul>
+                                                                <li>Shoes</li>
+                                                                <li><a href="">High heeled</a></li>
+                                                                <li><a href="">Sneakers</a></li>
+                                                                <li><a href="">Sandal</a></li>
+                                                                <li><img src="assets/photo/50.png" alt=""></li>
+                                                        </ul>
+                                                        <ul>
+                                                                <li>Dress</li>
+                                                                <li><a href="">Dress shirt</a></li>
+                                                                <li><a href="">Top shorts</a></li>
+                                                                <li><a href="">Sports</a></li>
+                                                                <li><img src="assets/photo/20 (2).png" alt=""></li>
+                                                        </ul>
+                                                </li>
+                                        </ul>
+                                </li>
+                                <li><a href="">Man</a></li>
+                                <li><a href="">Kid</a>
+                                        <ul class="line3">
+                                                <li><a href="">Shoes</a></li>
+                                                <li><a href="">Bag</a></li>
+                                                <li><a href="">Shirt</a></li>
+                                                <li><a href="">Cap</a></li>
+                                        </ul>
+                                </li>
+                        </ul>
+                        <ul>
+                                <li><img src="assets/photo/dandy-gallery-logo-2.png" alt=""></li>
+                        </ul>
+                        <ul>
+
+                                <li><a href=""><img src="assets/photo/heart.png" alt=""></a></li>
+                                <li><a href=""><img src="assets/photo/shopping-cart.png" alt=""></a></li>
+                                <li><a href=""><img src="assets/photo/user.png" alt=""></a>
+                                        <ul class="line3">
+                                                <li><a href="">Login</a></li>
+                                                <li><a href="">Profile</a></li>
+                                                <li><a href="">Cart</a></li>
+                                                <li><a href="">Logout</a></li>
+                                        </ul>
+                                </li>
+                        </ul>
+                </nav>
+                <section class="page1">
+
+                        <div class="left">
+                                <div>Dandy Gallery</div>
+                                <div><input type="submit" name="collection" id="buttom" value="Buy Now">
+                                </div>
+                        </div>
+                        <div class="right">
+                                <figure>
+                                        <img src="assets/photo/16.png" alt="refrash">
+                                </figure>
+                        </div>
+                </section>
+                <h2>What can you find in Dandy?</h2>
+                <section class="page2">
+                        <div>
+
+                                <div>
+
+                                        <img src="assets/photo/y.PNG" alt="">
+                                        <img src="assets/photo/w.PNG" alt="">
+                                        <img src="assets/photo/u.PNG" alt="">
+                                        <img src="assets/photo/t.PNG" alt="">
+                                        <img src="assets/photo/r.PNG" alt="">
+                                        <img src="assets/photo/q.PNG" alt="">
+                                        <img src="assets/photo/n.PNG" alt="">
+                                        <img src="assets/photo/m.PNG" alt="">
+                                        <img src="assets/photo/e.PNG" alt="">
+
+                                </div>
+
+                        </div>
+                </section>
+                <h3>Gallery</h3>
+                <section class="page3">
+                        <figure>
+                                <img src="assets/photo/100.jpg" alt="">
+                                <div role="button"><a href="">More</a></div>
+
+                        </figure>
+                        <figure>
+                                <img src="assets/photo/101.jpg" alt="">
+                                <div role="button"><a href="">More</a></div>
+                        </figure>
+
+                </section>
+                <section class="page4">
+                        <figure><img src="assets/photo/shop.jpg" alt=""></figure>
+                        <div>
+                                <h2>About Dandy</h2>
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam nostrum cum
+                                        cupiditate iste incidunt est mollitia at rerum veritatis quod! Aperiam
+                                        necessitatibus tenetur porro, atque nobis mollitia reprehenderit ad. Aliquid.
+                                </p>
+                        </div>
+                </section>
+                <section class="page5">
+                        <h3>Contact</h3>
+                        <div>
+                                <input type="text" placeholder="Name">
+                                <input type="email" placeholder="email">
+                                <input type="tel" placeholder="your phone">
+                                <textarea name="more" id="" cols="30" rows="10" placeholder="your idea..."></textarea>
+                                <input type="submit" value="Send">
+                        </div>
+                </section>
+                <footer class="foot">
+                        <div>
+                                <figure><img src="assets/photo/instagram.png" alt="">
+                                        <figcaption><a href="">Maryam-parvaz-web</a></figcaption>
+                                </figure>
+                                <figure><img src="assets/photo/linkedin.png" alt="">
+                                        <figcaption><a href="">Maryam Parvaz</a></figcaption>
+                                </figure>
+                                <figure><img src="assets/photo/paper-plane.png" alt="">
+                                        <figcaption><a href="">@Mry-flight</a></figcaption>
+                                </figure>
+                        </div>
+                        <div>
+                                <h4>Adress</h4>
+                                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt ad, tempore
+                                        provident similique nesciunt quae! Nam placeat, rerum, dolorem dicta ducimus
+                                        tempore in accusamus quas error, quae maiores hic perspiciatis?</p>
+                        </div>
+
+                </footer>
+        </main>
+</body>
+
+</html>
