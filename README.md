@@ -10,7 +10,7 @@
 
 - Technologies Used - Html , css 😍
 
-- Hooks Used : useState 
+- Hooks Used : useState .
 
 - Role - Frontend👌
 
